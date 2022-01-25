@@ -15,12 +15,13 @@ const config = {
         timeout: '1 days'
     },
     firebase: {
-        apiKey: 'AIzaSyBernKzdSojh_vWXBHt0aRhf5SC9VLChbM',
-        authDomain: 'berry-material-react.firebaseapp.com',
-        projectId: 'berry-material-react',
-        storageBucket: 'berry-material-react.appspot.com',
-        messagingSenderId: '901111229354',
-        appId: '1:901111229354:web:a5ae5aa95486297d69d9d3',
+        apiKey: "AIzaSyB_1oWs0BR0zwCPOP8HwbhvyksvESogGMo",
+        authDomain: "releasepartner.firebaseapp.com",
+        databaseURL: "https://releasepartner-default-rtdb.firebaseio.com",
+        projectId: "releasepartner",
+        storageBucket: "releasepartner.appspot.com",
+        messagingSenderId: "199679970723",
+        appId: "1:199679970723:web:aa771e128c3faee3299e16",
         measurementId: 'G-MGJHSL8XW3'
     },
     auth0: {

@@ -2,13 +2,15 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import { IconBrandChrome, IconHelp, IconSitemap } from '@tabler/icons';
+import {  IconSearch,IconBrandHipchat, IconCalendarEvent, IconHelp, IconSitemap } from '@tabler/icons';
 
 // constant
 const icons = {
-    IconBrandChrome,
+    IconCalendarEvent,
     IconHelp,
-    IconSitemap
+    IconSitemap,
+    IconBrandHipchat,
+    IconSearch
 };
 
 // ==============================|| SAMPLE PAGE & DOCUMENTATION MENU ITEMS ||============================== //
@@ -18,30 +20,28 @@ const other = {
     type: 'group',
     children: [
         {
-            id: 'sample-page',
-            title: <FormattedMessage id="sample-page" />,
+            id: 'app-chat',
+            title: <FormattedMessage id="app-chat" />,
             type: 'item',
-            url: '/sample-page',
-            icon: icons.IconBrandChrome,
+            url: '/app/chat',
+            icon: icons.IconBrandHipchat,
             breadcrumbs: false
         },
         {
-            id: 'documentation',
-            title: <FormattedMessage id="documentation" />,
+            id: 'calendar',
+            title: <FormattedMessage id="calendar" />,
             type: 'item',
-            url: 'https://codedthemes.gitbook.io/berry/',
-            icon: icons.IconHelp,
-            external: true,
-            target: true
+            url: '/app/calendar',
+            icon: icons.IconCalendarEvent,
+           
         },
         {
-            id: 'roadmap',
-            title: <FormattedMessage id="roadmap" />,
+            id: 'search',
+            title: <FormattedMessage id="search" />,
             type: 'item',
-            url: 'https://codedthemes.gitbook.io/berry/roadmap',
-            icon: icons.IconSitemap,
-            external: true,
-            target: true
+            url: 'https://codedthemes.gitbook.io/berry/',
+            icon: icons.IconSearch,
+           
         }
     ]
 };

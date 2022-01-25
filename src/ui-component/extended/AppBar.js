@@ -72,20 +72,20 @@ const AppBar = ({ ...others }) => {
                             <Button color="inherit" component={Link} href="#" target="_blank">
                                 Home
                             </Button>
-                            <Button color="inherit" component={RouterLink} to="login" target="_blank">
+                            {/* <Button color="inherit" component={RouterLink} to="login" target="_blank">
                                 Dashboard
                             </Button>
                             <Button color="inherit" component={Link} href="https://codedthemes.gitbook.io/berry" target="_blank">
                                 Documentation
-                            </Button>
+                            </Button> */}
                             <Button
                                 component={Link}
-                                href="https://material-ui.com/store/items/berry-react-material-admin/"
+                                href="/login"
                                 disableElevation
                                 variant="contained"
                                 color="secondary"
                             >
-                                Purchase Now
+                                Sign In
                             </Button>
                         </Stack>
                         <Box sx={{ display: { xs: 'block', sm: 'none' } }}>

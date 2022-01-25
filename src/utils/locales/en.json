@@ -130,9 +130,10 @@
     "c": "C",
     "outlined": "Outlined",
 
-    "sample-page": "Sample Page",
-    "documentation": "Documentation",
+    "app-chat": "Chat",
+    "Calendar": "Calendar",
     "roadmap": "Roadmap",
+    "search": "Find a Partner",
 
     "title": "Multi Language",
     "home": "Home",

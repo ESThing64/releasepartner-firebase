@@ -1,0 +1,2 @@
+(this["webpackJsonpberry-material-react"]=this["webpackJsonpberry-material-react"]||[]).push([[17],{1234:function(e,r,t){"use strict";t.r(r);var a=t(113),c=t(154),i=t(1);r.default=function(){return Object(i.jsx)(c.a,{title:"Sample Card",children:Object(i.jsx)(a.a,{variant:"body2",children:"hey"})})}}}]);
+//# sourceMappingURL=17.108aecca.chunk.js.map

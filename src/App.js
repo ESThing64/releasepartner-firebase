@@ -18,7 +18,9 @@ import Snackbar from 'ui-component/extended/Snackbar';
 // auth provider
 import { FirebaseProvider } from 'contexts/FirebaseContext';
 
-// import 'firebase/firestore';
+import 'firebase/firestore';
+// import { getFirestore } from "firebase/firestore"
+// const db = getFirestore();
 // import { JWTProvider } from 'contexts/JWTContext';
 // import { Auth0Provider } from 'contexts/Auth0Context';
 

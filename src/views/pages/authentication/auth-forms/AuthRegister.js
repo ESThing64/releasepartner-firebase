@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { setDoc, addDoc, collection } from 'firebase/firestore';
+import { getFirestore } from "firebase/firestore"
+
+
+
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
@@ -38,7 +43,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 // ===========================|| FIREBASE - REGISTER ||=========================== //
-
+const db = getFirestore();
 const FirebaseRegister = ({ ...others }) => {
     const theme = useTheme();
     const scriptedRef = useScriptRef();
@@ -145,6 +150,13 @@ const FirebaseRegister = ({ ...others }) => {
                 })}
                 onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
                     try {
+                        await addDoc(collection(db, "users"), {
+                            
+                            email: values.email,
+                            first_name: values.fname,
+                            last_name: values.lname
+                            
+                        });
                         await firebaseRegister(values.email, values.password).then(
                             () => {
                                 // WARNING: do not set any formik state here as formik might be already destroyed here. You may get following error by doing so.
@@ -152,22 +164,26 @@ const FirebaseRegister = ({ ...others }) => {
                                 // To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
                                 // github issue: https://github.com/formium/formik/issues/2430
                             },
+                            
                             (err) => {
                                 if (scriptedRef.current) {
+                                    if(!err){
+        
+                                    }
                                     setStatus({ success: false });
                                     setErrors({ submit: err.message });
                                     setSubmitting(false);
                                 }
                             }
-                        );
-                    } catch (err) {
-                        console.error(err);
-                        if (scriptedRef.current) {
-                            setStatus({ success: false });
-                            setErrors({ submit: err.message });
-                            setSubmitting(false);
+                            );
+                        } catch (err) {
+                            console.error(err);
+                            if (scriptedRef.current) {
+                                setStatus({ success: false });
+                                setErrors({ submit: err.message });
+                                setSubmitting(false);
+                            }
                         }
-                    }
                 }}
             >
                 {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (
@@ -178,6 +194,8 @@ const FirebaseRegister = ({ ...others }) => {
                                     fullWidth
                                     label="First Name"
                                     margin="normal"
+                                    value={values.fname}
+                                    onChange={handleChange}
                                     name="fname"
                                     type="text"
                                     defaultValue=""
@@ -188,6 +206,8 @@ const FirebaseRegister = ({ ...others }) => {
                                 <TextField
                                     fullWidth
                                     label="Last Name"
+                                    value={values.lname}
+                                    onChange={handleChange}
                                     margin="normal"
                                     name="lname"
                                     type="text"

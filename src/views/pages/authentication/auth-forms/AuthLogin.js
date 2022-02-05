@@ -38,6 +38,10 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 import Google from 'assets/images/icons/social-google.svg';
 
+// import { initializeApp } from "firebase/app"
+
+
+
 // ============================|| FIREBASE - LOGIN ||============================ //
 
 const FirebaseLogin = ({ loginProp, ...others }) => {
@@ -131,8 +135,8 @@ const FirebaseLogin = ({ loginProp, ...others }) => {
 
             <Formik
                 initialValues={{
-                    email: 'info@codedthemes.com',
-                    password: '123456',
+                    email: '',
+                    password: '',
                     submit: null
                 }}
                 validationSchema={Yup.object().shape({

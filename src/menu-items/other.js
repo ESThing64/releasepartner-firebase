@@ -39,7 +39,7 @@ const other = {
             id: 'search',
             title: <FormattedMessage id="search" />,
             type: 'item',
-            url: 'https://codedthemes.gitbook.io/berry/',
+            url: 'user/list',
             icon: icons.IconSearch,
            
         }
